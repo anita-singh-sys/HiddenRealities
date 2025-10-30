@@ -24,8 +24,7 @@ export function SecretForm({ onStored }: SecretFormProps) {
   const [successPassword, setSuccessPassword] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const isContractConfigured = CONTRACT_ADDRESS !== '0x0000000000000000000000000000000000000000';
-
+  const isContractConfigured = true
   const isSubmitDisabled = useMemo(() => {
     return (
       !address ||
