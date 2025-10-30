@@ -1,7 +1,8 @@
-# FHEVM Hardhat Template
+# Encrypted Secrets with Zama FHE
 
-A Hardhat-based template for developing Fully Homomorphic Encryption (FHE) enabled Solidity smart contracts using the
-FHEVM protocol by Zama.
+This project stores user generated secrets on-chain by combining symmetric encryption in the browser with Zama's Fully
+Homomorphic Encryption (FHE) tooling. Each secret is encrypted client-side with a random EVM address that is itself
+encrypted through the Zama relayer before being persisted on-chain.
 
 ## Quick Start
 
@@ -19,18 +20,16 @@ For detailed instructions see:
 
    ```bash
    npm install
-   ```
+```
 
 2. **Set up environment variables**
 
    ```bash
-   npx hardhat vars set MNEMONIC
-
-   # Set your Infura API key for network access
-   npx hardhat vars set INFURA_API_KEY
-
-   # Optional: Set Etherscan API key for contract verification
-   npx hardhat vars set ETHERSCAN_API_KEY
+   cp .env.example .env
+   # Edit .env with the following values
+   # INFURA_API_KEY=your_infura_project_id
+   # PRIVATE_KEY=0xyour_deployer_private_key
+   # ETHERSCAN_API_KEY=optional_key
    ```
 
 3. **Compile and test**
@@ -58,19 +57,12 @@ For detailed instructions see:
    npx hardhat verify --network sepolia <CONTRACT_ADDRESS>
    ```
 
-6. **Test on Sepolia Testnet**
-
-   ```bash
-   # Once deployed, you can run a simple test on Sepolia.
-   npx hardhat test --network sepolia
-   ```
-
 ## 📁 Project Structure
 
 ```
 fhevm-hardhat-template/
 ├── contracts/           # Smart contract source files
-│   └── FHECounter.sol   # Example FHE counter contract
+│   └── EncryptedSecrets.sol   # Confidential secret storage contract
 ├── deploy/              # Deployment scripts
 ├── tasks/               # Hardhat custom tasks
 ├── test/                # Test files
