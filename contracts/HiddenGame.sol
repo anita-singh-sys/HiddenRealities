@@ -4,9 +4,9 @@ pragma solidity ^0.8.24;
 import {FHE, eaddress, externalEaddress} from "@fhevm/solidity/lib/FHE.sol";
 import {SepoliaConfig} from "@fhevm/solidity/config/ZamaConfig.sol";
 
-/// @title EncryptedSecrets
+/// @title HiddenGame
 /// @notice Stores user secrets comprised of symmetric ciphertexts and encrypted passwords.
-contract EncryptedSecrets is SepoliaConfig {
+contract HiddenGame is SepoliaConfig {
     struct Secret {
         eaddress password;
         bytes ciphertext;
