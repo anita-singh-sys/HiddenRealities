@@ -1,5 +1,5 @@
 // EncryptedSecrets contract deployed on Sepolia (replace with live address after deployment)
-export const CONTRACT_ADDRESS = '0x0000000000000000000000000000000000000000';
+export const CONTRACT_ADDRESS = '0x7CBA5c5dA6533a37656D99044E264D4E66C0c562';
 
 // ABI copied from deployments/sepolia/EncryptedSecrets.json
 export const CONTRACT_ABI = [
