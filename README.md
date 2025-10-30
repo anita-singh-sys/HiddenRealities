@@ -1,4 +1,4 @@
-# Encrypted Secrets with Zama FHE
+# HiddenRealities
 
 This project stores user generated secrets on-chain by combining symmetric encryption in the browser with Zama's Fully
 Homomorphic Encryption (FHE) tooling. Each secret is encrypted client-side with a random EVM address that is itself
